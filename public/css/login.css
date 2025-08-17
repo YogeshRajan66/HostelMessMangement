@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-image.top {
+    background-image: url('/images/college.jpg');
+}
+.bg-image.bottom {
+    background-image: url('/images/greeny.jpg');
+}
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+.card {
+    width: 100%;
+    max-width: 400px;
+}
+.card-body {
+    background-color: rgba(19, 18, 18, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px; /* Optional: to make the card look smoother */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle border to enhance the glass effect */
+}

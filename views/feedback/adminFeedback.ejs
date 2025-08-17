@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Feedback Management</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    <%- include('../partials/adminnavbar') %>
+    <main>
+      <h1>Feedback Management</h1>
+      <section class="feedback-table">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Details</th>
+              <th>Time of Submission</th>
+              <th>Resolved</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% feedbacks.forEach(feedback => { %>
+              <tr>
+                <td><%= feedback.user %></td>
+                <td><%= feedback.details %></td>
+                <td><%= feedback.timeOfSubmission.toISOString().split('T')[0] %></td>
+                <td><%= feedback.isResolved ? 'Yes' : 'No' %></td>
+                <td>
+                  <% if (!feedback.isResolved) { %>
+                    <form action="/admin-feedbacks/<%= feedback._id %>/resolve" method="POST">
+                      <button type="submit">Mark as Resolved</button>
+                    </form>
+                  <% } else { %>
+                    <span>Resolved</span>
+                  <% } %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

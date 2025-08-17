@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Payments</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <%- include('../partials/adminnavbar') %> <!-- Including the admin navigation bar -->
+        <main>
+            <!-- Section for Viewing Payments -->
+            <section id="payments-overview" class="card">
+                <h2>Payments Overview</h2>
+                <h3>All Payments</h3>
+
+                <!-- Table to display all payments -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Payment Type</th>
+                            <th>Amount (INR)</th>
+                            <th>Status</th>
+                            <th>Payment Method</th>
+                            <th>Transaction ID</th>
+                            <th>Payment Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (payments.length > 0) { %>
+                            <% payments.forEach(payment => { %>
+                                <tr>
+                                    <td><%= payment.studentName %></td>
+                                    <td><%= payment.type %></td>
+                                    <td><%= payment.amount %></td>
+                                    <td class="<%= payment.status === 'completed' ? 'status-completed' : payment.status === 'pending' ? 'status-pending' : 'status-failed' %>">
+                                        <%= payment.status %>
+                                    </td>
+                                    <td><%= payment.paymentMethod || 'N/A' %></td>
+                                    <td><%= payment.transactionId || 'N/A' %></td>
+                                    <td><%= new Date(payment.date).toLocaleString() %></td> <!-- Formatted payment date -->
+                                </tr>
+                            <% }); %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="7">No payments found.</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section for Adding Payment -->
+            <section id="add-payment" class="card">
+                <h3>Add Payment for a Student</h3>
+                <form method="POST" action="/admin-payments/add">
+                    <!-- Student Username Selection -->
+                    <label for="studentUsername">Select Student (Username):</label>
+                    <select name="studentUsername" id="studentUsername" required>
+                        <% students.forEach(student => { %>
+                            <option value="<%= student.username %>"><%= student.username %> - <%= student.name %></option>
+                        <% }) %>
+                    </select>
+                    
+                    <!-- Payment Type -->
+                    <label for="type">Payment Type:</label>
+                    <select name="type" id="type" required>
+                        <option value="mess">Mess</option>
+                        <option value="hostel">Hostel</option>
+                    </select>
+
+                    <!-- Amount -->
+                    <label for="amount">Amount (INR):</label>
+                    <input type="number" name="amount" id="amount" placeholder="Enter amount" required>
+
+                    <button type="submit">Add Payment</button>
+                </form>
+            </section>
+
+            <!-- Section for List of Students -->
+            <section id="students-list" class="card">
+                <h3>List of Students</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Username</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                            <th>Contact Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (students.length > 0) { %>
+                            <% students.forEach(student => { %>
+                                <tr>
+                                    <td><%= student.name %></td>
+                                    <td><%= student.username %></td>
+                                    <td><%= student.course %></td>
+                                    <td><%= student.year || 'N/A' %></td>
+                                    <td><%= student.contactNumber || 'N/A' %></td>
+                                </tr>
+                            <% }); %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="5">No students found.</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

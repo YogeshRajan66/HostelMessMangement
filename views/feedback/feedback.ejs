@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="/css/feedback.css"> <!-- Link to the feedback CSS file -->
+    <link rel="stylesheet" href="/css/navbar-footer.css"> <!-- Common navbar/footer CSS -->
+</head>
+<body>
+    <div class="bg-image top"></div>
+    
+    <!-- Include Navbar -->
+    <%- include('../partials/navbar') %>
+    <div class="container">
+        <section class="widget">
+            <h1 class="feedback-title">Feedback Form</h1>
+            
+            <form action="/feedback2" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-box" type="text" id="name" name="name" value="<%= user.name %>" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="details">Details:</label>
+                    <textarea class="form-box" id="details" name="details" rows="10" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </section>
+    </div>
+    <%- include('../partials/footer') %> 
+</body>
+</html>

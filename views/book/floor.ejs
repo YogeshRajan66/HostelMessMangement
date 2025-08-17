@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor <%= floor %> Rooms</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .badge-success {
+            background-color: #28a745;
+        }
+        .badge-danger {
+            background-color: #dc3545;
+        }
+        .alert {
+            text-align: center;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Rooms on Floor <%= floor %></h1>
+    </div>
+    
+    <div class="container">
+        <% if (hasBooked) { %>
+            <!-- Show message if user has already booked a room -->
+            <div class="alert alert-warning" role="alert">
+                You have already booked a room and cannot book another.
+            </div>
+        <% } %>
+
+        <div class="row">
+            <% rooms.forEach(room => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Room <%= room.roomId %></h5>
+                            <p class="card-text">
+                                Status: 
+                                <span class="<%= room.booked ? 'badge badge-danger' : 'badge badge-success' %>">
+                                    <%= room.booked ? 'Booked' : 'Available' %>
+                                </span>
+                            </p>
+
+                            <% if (!hasBooked && !room.booked) { %>
+                                <!-- Show booking form if room is available and user has not booked a room -->
+                                <form action="/book" method="post">
+                                    <input type="hidden" name="roomId" value="<%= room._id %>">
+                                    <input type="hidden" name="userId" value="<%= userId %>">
+                                    <button type="submit" class="btn btn-primary">Book Room</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <a href="/show-rooms" class="btn btn-secondary mt-4">Back to Floor Selection</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

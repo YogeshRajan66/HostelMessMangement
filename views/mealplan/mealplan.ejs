@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan</title>
+    <link rel="stylesheet" href="/css/mealpage.css"> <!-- Adjusted path for CSS file -->
+    <link rel="stylesheet" href="/css/navbar-footer.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="bg-image"></div>
+    <%- include('../partials/navbar') %>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container"> 
+            <section class="widget-head"> 
+                <h1><b>Meal Plan for the Week</b></h1>
+            </section>
+
+            <!-- Loop through the mealPlans array and display each day's meal -->
+            <% mealPlans.forEach(meal => { %>
+                <section class="widget">
+                    <h3><%= meal.day %></h3>
+                    <p>Breakfast: <%= meal.breakfast %></p>
+                    <p>Lunch: <%= meal.lunch %></p>
+                    <p>Dinner: <%= meal.dinner %></p>
+                </section>
+            <% }) %>
+            <%- include('../partials/footer') %>
+        </div>
+    </main>
+    
+</body>
+</html>

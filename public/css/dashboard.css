@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    position: relative;
+}
+
+
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/dash_bg.jpg'); /* Update with your actual image path */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    color: #fff;
+    position: relative;
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px; /* Margin to show rounded corners */
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    height: 25px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px; /* Space between nav items */
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .logout {
+    margin-left: auto; /* Pushes the logout button to the right */
+}
+
+.navbar .logout a {
+    background-color: #ff4d4d; /* Background color for logout button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none; /* Remove underline */
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Evenly space the cards vertically */
+    height: 100vh; /* Make the container take the full viewport height */
+    padding: 20px;
+    gap: 20px;
+}
+
+.widget {
+    background-color: rgba(255, 255, 255,0.6); /* Semi-transparent white */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%;
+    margin: 0 auto; /* Center horizontally */
+    flex: 1; /* Equal height for cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content inside */
+    backdrop-filter: blur(10px); /* Optional: adds a glass-like effect */
+}
+
+.widget h3 {
+    margin-top: 0;
+}
+
+.widget a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #3498db;
+}
+

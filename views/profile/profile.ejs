@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/navbar-footer.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+<body>
+    
+    <%- include('../partials/navbar') %>
+    <!-- Main Content -->
+    <div class="container">
+        <h2 style="text-align: center;">Student Profile</h2>
+
+        <div class="profile-card">
+            <!-- Dynamic profile picture -->
+            <div class="profile-pic" style="background-color: black;">
+                <span ><%= name.charAt(0).toUpperCase() %></span>
+            </div>
+            <div class="profile-info">
+                <p><strong>Name:</strong> <%= name %></p>
+                <p><strong>Email:</strong> <%= email %></p>
+                <p><strong>Course:</strong> <%= course %></p>
+                <p><strong>Year:</strong> <%= year %></p>
+                <p><strong>Contact Number:</strong> <%= contactNumber %></p>
+                <p><strong>Address:</strong> <%= address %></p>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

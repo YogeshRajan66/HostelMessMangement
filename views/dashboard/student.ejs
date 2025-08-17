@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/navbar-footer.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="bg-image"></div>
+
+    <%- include('../partials/navbar') %>
+
+    <!-- Content Container -->
+    <div class="container">
+        
+        <section class="widget">
+            <h3>Meal Plan</h3>
+
+            <% if (mealPlan) { %>
+                <p>Today's meal:</p>
+                <h4>
+                    <strong>Breakfast:</strong> <%= mealPlan.breakfast %><br>
+                    <strong>Lunch:</strong> <%= mealPlan.lunch %><br>
+                    <strong>Dinner:</strong> <%= mealPlan.dinner %>
+                </h4>
+            <% } else { %>
+                <p>No meal plan available for today.</p>
+            <% } %>
+            <a href="/mealplan">View Weekly Plan</a>
+        </section>
+        
+        
+        <section class="widget">
+            <h3>Payments</h3>
+            <% if (hasPendingPayments) { %>
+                <p>Outstanding Balance:</p>
+                <h4>
+                    <% if (messAmount > 0) { %>
+                        Mess Fee: ₹<%= messAmount %>
+                    <% } %>
+                    <% if (hostelAmount > 0) { %>
+                        Hostel Fee: ₹<%= hostelAmount %>
+                    <% } %>
+                </h4>
+            <% } else { %>
+                <p>All payments are up to date.</p>
+            <% } %>
+            <a href="/payments">View Payment History</a>
+        </section>
+        
+        <section class="widget">
+            <h3>Notifications</h3>
+            <% if (notifications.length > 0) { %>
+                <ul>
+                    <% notifications.forEach(notification => { %>
+                        <li><%= notification.message %></li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>No new notifications.</p>
+            <% } %>
+        </section>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/public/js/dashboard.js"></script>
+</body>
+</html>

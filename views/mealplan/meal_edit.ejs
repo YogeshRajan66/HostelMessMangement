@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Meal Plans</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <%- include('../partials/adminnavbar') %>
+        <main>
+            <section id="meal-plan-edit" class="card">
+                <h2>Edit Meal Plans</h2>
+                <form action="/edit-meal-plans" method="POST">
+                    <% mealPlans.forEach((mealPlan) => { %>
+                        <div class="meal-plan">
+                            <h3><%= mealPlan.day %></h3>
+                            <div class="form-group">
+                                <label for="breakfast_<%= mealPlan._id %>">Breakfast:</label>
+                                <input type="text" id="breakfast_<%= mealPlan._id %>" name="mealPlans[<%= mealPlan._id %>][breakfast]" class="form-control" value="<%= mealPlan.breakfast %>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lunch_<%= mealPlan._id %>">Lunch:</label>
+                                <input type="text" id="lunch_<%= mealPlan._id %>" name="mealPlans[<%= mealPlan._id %>][lunch]" class="form-control" value="<%= mealPlan.lunch %>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dinner_<%= mealPlan._id %>">Dinner:</label>
+                                <input type="text" id="dinner_<%= mealPlan._id %>" name="mealPlans[<%= mealPlan._id %>][dinner]" class="form-control" value="<%= mealPlan.dinner %>" required>
+                            </div>
+                        </div>
+                    <% }); %>
+                    <button type="submit" class="btn">Save Changes</button>
+                </form>                
+            </section>
+        </main>
+    </div>
+</body>
+</html>

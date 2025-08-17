@@ -1,0 +1,128 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif; /* Change to your desired font */
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-image.top {
+    background-image: url('/images/pay2.avif');
+}
+
+.bg-image.bottom {
+    background-image: url('/images/pay2.avif');
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+}
+
+.card-body {
+    background-color: rgba(74, 64, 80, 0.633); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px; /* Optional: to make the card look smoother */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle border to enhance the glass effect */
+    padding: 2rem;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+.card-body h1 {
+    font-size: 2rem; /* Increase main heading size */
+    text-align: center; /* Center the main heading */
+    margin-bottom: 1rem; /* Add some space below the heading */
+}
+
+.card-body h3 {
+    font-size: 1.5rem; /* Increase subheading size */
+    margin: 1rem 0; /* Add vertical spacing */
+    text-align: left; /* Align subheadings to the left */
+}
+
+.card-body h4 {
+    font-size: 1.2rem; /* Set the payment info size */
+    margin: 0.5rem 0; /* Space between payment details */
+    text-align: left; /* Align payment info to the left */
+}
+
+.card-body p {
+    font-size: 1rem; /* Set general paragraph size */
+    text-align: center; /* Center paragraph text */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Increased space between form groups */
+}
+
+.btn {
+    font-size: 1.1rem; /* Slightly larger button text */
+    padding: 0.75rem 1.5rem; /* Adjust button padding for better click area */
+}
+
+.error-message {
+    font-size: 0.9rem; /* Adjust error message size */
+    text-align: center; /* Center align error messages */
+}

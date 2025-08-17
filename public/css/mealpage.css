@@ -1,0 +1,133 @@
+/* Background Image Styles */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/mess_bg.jpg"); /* Update with your actual image path */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Behind other content */
+    opacity: 0.8; /* Slight transparency */
+}
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Evenly space the cards vertically */
+    height: 100vh; /* Make the container take the full viewport height */
+    padding: 20px;
+    gap: 20px;
+}
+.widget {
+    background-color: rgba(255, 255, 255,0.6); /* Semi-transparent white */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%;
+    margin: 0 auto; /* Center horizontally */
+    flex: 1; /* Equal height for cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content inside */
+    backdrop-filter: blur(10px); /* Optional: adds a glass-like effect */
+}
+.widget-head {
+    background-color: rgba(255, 255, 255,0.6); /* Semi-transparent white */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%;
+    height: 10%;
+    margin: 0 auto; /* Center horizontally */
+    flex-direction: column;
+    justify-content: center; /* Center content inside */
+    backdrop-filter: blur(10px); /* Optional: adds a glass-like effect */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    color: #fff;
+    position: relative;
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /* Make sure navbar is above the background */
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Content is above the background */
+}
+
+#menu {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#menu h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.day-menu {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+}
+
+.day-menu h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #444;
+}
+
+.day-menu p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}

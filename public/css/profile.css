@@ -1,0 +1,68 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/profile-bg.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f0f0f0; /* Light color for the text */
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for the main card */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    height:400px;
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+    background-color: #3498db; /* Default color for profile picture background */
+}
+
+.profile-info {
+    font-size: 18px;
+}
+
+
+.profile-card span {
+    font-size: 55px;
+}
+.profile-info p {
+    margin: 25px 0;
+    color: #f0f0f0; /* Light color for the text */
+}
+
+.profile-info p strong {
+    color: #ecf0f1; /* Lighter color for strong text */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(44, 62, 80, 0.7);
+    color: #f0f0f0;
+}

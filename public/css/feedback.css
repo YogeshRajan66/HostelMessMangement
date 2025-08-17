@@ -1,0 +1,134 @@
+/* General Styles from dashboard.css */
+
+/* Apply background image */
+.feedback-title {
+    font-size: 2.5rem; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: make the title bold */
+    margin-bottom: 20px; /* Adjust spacing below the title */
+    color: #333; /* Optional: customize the title color */
+}
+
+.bg-image.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/feed_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensure the image stays behind the content */
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Adjust padding for height */
+    margin: 20px;
+    border-radius: 5px; /* Rounded bottom corners */
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center items vertically */
+    height: 25px; /* Example height */
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Align list items horizontally */
+    gap: 10px;
+}
+
+.nav-links li {
+    margin: 0 10px; /* Space between list items */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logout {
+    background-color: #e74c3c; /* Red background color for logout button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Ensure it's not underlined */
+    /* Align logout button to the right */
+    margin-left: auto; /* Pushes the logout button to the far right */
+}
+
+.logout:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Container and Widget Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjust based on your navbar height */
+    padding: 20px;
+}
+
+.widget {
+    width: 60%;
+    background-color: rgba(194, 185, 185, 0.6); /* Semi-transparent white background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.form-box{
+    /* Adjust this value to your preference */
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-box textarea
+{
+    height: 350px; 
+}

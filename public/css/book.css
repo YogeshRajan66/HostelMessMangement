@@ -1,0 +1,71 @@
+/* book.css */
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+  
+  /* Floor Selection */
+  .floor-selection {
+    padding-top: 50px;
+  }
+  
+  .floor-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .floor-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Room Cards */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .book-button {
+    margin-top: 10px;
+  }
+  
+  .booked .card-body {
+    background-color: #f8f9fa;
+  }
+  
+  .book-button.w-100 {
+    width: 100%;
+  }
+  
+  /* Add spacing around room sections */
+  .row-cols-md-3 .col {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+  }
+  

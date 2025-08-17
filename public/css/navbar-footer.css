@@ -1,0 +1,60 @@
+/* public/css/navbar-footer.css */
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    color: #fff;
+    position: relative;
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px; /* Margin to show rounded corners */
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    height: 20px; /* Adjusted height for navbar */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px; /* Space between nav items */
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .logout {
+    margin-left: auto; /* Pushes the logout button to the right */
+}
+
+.navbar .logout a {
+    background-color: #ff4d4d; /* Background color for logout button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none; /* Remove underline */
+}
+
+/* Footer Styles */
+footer {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    margin: 0 auto;
+}
+
